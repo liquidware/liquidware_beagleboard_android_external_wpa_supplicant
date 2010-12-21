@@ -2563,6 +2563,7 @@ static int wpa_driver_priv_driver_cmd(void *priv, char *cmd, char *buf, size_t b
 	if ((ret = ioctl(drv->ioctl_sock, SIOCSIWPRIV, &iwr)) < 0) {
 		perror("ioctl[SIOCSIWPRIV]");
 	}
+    ret = 0;    //TODO: http://blog.linuxconsulting.ro/2010/04/porting-wifi-drivers-to-android.html
 
 	if (ret < 0) {
 		wpa_printf(MSG_ERROR, "%s failed", __func__);
